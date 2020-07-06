@@ -1,0 +1,19 @@
+<div *ngIf="movie" class="container">
+  <div class="col-xs-10 col-md-offset-.5">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Movie :{{movie.movies_name}}</div>
+    </div>
+
+    <div class="screen">
+      <label for="screen">Screen</label>
+      <select *ngIf="screens" ngModel (ngModelChange)='onScreenSelected($event)'>
+        <option>Choose your screen</option>
+        <option *ngFor="let screen of screens" [value]="screen.screening_id">{{screen.screening_id}}</option>
+      </select>
+    </div>
+
+    <div *ngIf="auditorium" class="Auditorium">
+      <label for="Auditorium">Auditorium</label>
+      <span> {{auditorium.screening_auditorium_id}}</span>
+    </div>
+  </div>

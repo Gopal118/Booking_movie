@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="col-xs-10 col-md-offset-.5">
+        <p *ngIf !="movies">No data avaliable</p>
+        <ul class="list-group" *ngIf="movies">
+            <h1>Movies</h1>
+            <ul class="list-group-item" *ngFor="let movie of movies">
+                <a routerLink="/booking/{{movie.movies_id}}">
+                    <h3>{{movie.movies_id}}</h3>
+                    <label>Movie name : {{movie.movies_name}}</label><br>
+                    <label>Director :{{movie.movies_director}}</label> <br>
+                    <label>Genre :{{movie.movies_genre}}</label> <br>
+                    <label>Duration in min :{{movie.movies_duration_min}}</label> <br>
+                </a>
+            </ul>
+        </ul>
+    </div>
+</div>
